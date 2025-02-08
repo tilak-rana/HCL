@@ -4,7 +4,7 @@ import checkUserAuth from "../middlewares/authChangePassword.js"
 
 const route = express.Router();
 
-// route level middleware - to protect private routes
+
 route.use('/changepassword', checkUserAuth);
 route.use('/logeduser', checkUserAuth);
 
@@ -15,6 +15,6 @@ route.post('/login', userController.userLogin);
 
 // Private routes
 route.post('/changepassword', userController.changeUserPassword);
-route.get('/logeduser', userController.logedUser);
+route.get('/logout', userController.logedUser);
 
 export default route;
