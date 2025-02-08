@@ -1,6 +1,7 @@
 import userSchema from "../models/userSchema.js";
 import jwt from "jsonwebtoken";
 
+
 const authChangePassword = async (req, res, next) => {
     const { authorization } = req.headers;
     let token;

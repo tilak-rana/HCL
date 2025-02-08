@@ -17,11 +17,14 @@ const userSchema = new mongoose.Schema({
     required: true,
     trim: true,
   },
-  tc: {
-    //terms and conditions
-    type: Boolean,
-    required: true,
+  role: {
+    type: String,
+    enum: [
+      "Principal Investigator(PI)",
+      "Clinical Research Coordinator(CRC)",
+      "Regulatory Authority(RA)",
+    ],
   },
 });
 
-export default mongoose.model("userSchema", userSchema, "user");
+export default mongoose.model("userSchema", userSchema, "Users");
